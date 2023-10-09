@@ -4,6 +4,8 @@ import io.minio.MakeBucketArgs;
 import io.minio.MinioClient;
 import io.minio.UploadObjectArgs;
 import io.minio.errors.MinioException;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -17,23 +19,14 @@ import java.text.SimpleDateFormat;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.logging.Level;
-import java.util.logging.FileHandler;
-import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
 import java.util.stream.Stream;
 
 public class FileUpload {
-    private static final Logger logger = Logger.getLogger("logger");
+    private static final Logger logger = LoggerFactory.getLogger(FileUpload.class);
     public static void main(String[] args) throws IOException, ParseException {
 
-        FileHandler fileHandler = new FileHandler("C:\\Users\\fang\\Documents\\Logs\\minio.log");
-        fileHandler.setLevel(Level.INFO);
-        logger.addHandler(fileHandler);
-        logger.setUseParentHandlers(false);
-        SimpleFormatter formatter = new SimpleFormatter();
-        fileHandler.setFormatter(formatter);
-        logger.info("Logger start.");
+
+        logger.trace("Logger start.");
 
         String rootPath = "C:\\Users\\fang\\Documents\\repo";
         String trimPath = "C:\\Users\\fang\\Documents\\";
@@ -74,12 +67,12 @@ public class FileUpload {
                         System.out.println("Bucket 'testadam' doesn't exist.");
                     }
                     // Upload file as object name to bucket
-                    minioClient.uploadObject(
-                            UploadObjectArgs.builder()
-                                    .bucket("testadam")
-                                    .object(objectPath)
-                                    .filename(filename)
-                                    .build());
+//                    minioClient.uploadObject(
+//                            UploadObjectArgs.builder()
+//                                    .bucket("testadam")
+//                                    .object(objectPath)
+//                                    .filename(filename)
+//                                    .build());
                     System.out.println(
                             objectPath + " is successfully uploaded to bucket.");
                     System.out.println("----------------------------------------------");

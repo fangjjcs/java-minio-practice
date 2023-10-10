@@ -5,9 +5,11 @@ import io.minio.messages.Item;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.nio.file.attribute.FileTime;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -38,9 +40,9 @@ public class FileUpload {
         MinioClient minioClient = initMinioClient();
 
         // Upload Files
-        uploadFile(minioClient, path, trimPath, timeThreshold);
-        System.out.println("Upload Done.");
-        logger.info("Upload Done.");
+//        uploadFile(minioClient, path, trimPath, timeThreshold);
+//        System.out.println("Upload Done.");
+//        logger.info("Upload Done.");
 
         // Download Files
         ListAndDownloadMinioFiles(minioClient);
@@ -123,18 +125,42 @@ public class FileUpload {
         }
     }
 
-    private static void downloadFiles(MinioClient minioClient, String objectName) throws ServerException, InsufficientDataException, ErrorResponseException, IOException, NoSuchAlgorithmException, InvalidKeyException, InvalidResponseException, XmlParserException, InternalException {
+    private static void downloadFiles(MinioClient minioClient, String objectName) {
 
         String filePath = "C:/Users/fang/Documents/download/" + objectName;
+        Path directory = Paths.get(filePath).getParent();
+        System.out.println("Download Directory : " + directory);
 
-        System.out.println(objectName);
-        System.out.println(filePath);
+        try{
 
-        DownloadObjectArgs args = DownloadObjectArgs.builder()
-                .bucket("testadam")
-                .object(objectName)
-                .filename(filePath)
-                .build();
-        minioClient.downloadObject(args);
+            File newDirectory = new File(String.valueOf(directory));
+            if (!newDirectory.exists()){
+                newDirectory.mkdirs();
+                System.out.println("Directory doesn't exist and is created.");
+            }
+
+            File file = new File(filePath);
+            if (file.exists() && !file.isDirectory()){
+                System.out.println(filePath + " is already exist and be replaced by new version.");
+            }
+
+            System.out.println("File on bucket : " + objectName);
+
+            DownloadObjectArgs args = DownloadObjectArgs.builder()
+                    .bucket("testadam")
+                    .object(objectName)
+                    .filename(filePath)
+                    .overwrite(true)
+                    .build();
+            minioClient.downloadObject(args);
+            System.out.println(filePath + " is downloaded successfully.");
+            System.out.println("----------------------------------------------------------------");
+
+        } catch (MinioException | InvalidKeyException | IOException | NoSuchAlgorithmException e) {
+            System.out.println(
+                    filePath + " download failed.");
+            throw new RuntimeException(e);
+        }
+
     }
 }

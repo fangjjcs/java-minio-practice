@@ -1,0 +1,30 @@
+2023-10-02 22:33:45,247 [main] INFO  org.example.FileUpload [FileUpload.java : 100] - 09/23/23 15:25:00 | 7 bytes | C:\Users\fang\Documents\repo\01\test.txt
+
+2023-10-02 22:33:46,503 [main] INFO  org.example.FileUpload [FileUpload.java : 79] - repo/01/test.txt is successfully uploaded to bucket.
+2023-10-02 22:33:46,504 [main] INFO  org.example.FileUpload [FileUpload.java : 80] - ----------------------------------------------
+2023-10-02 22:33:46,505 [main] INFO  org.example.FileUpload [FileUpload.java : 100] - 09/23/23 15:25:00 | 7 bytes | C:\Users\fang\Documents\repo\01\test02.txt
+
+2023-10-02 22:33:46,712 [main] INFO  org.example.FileUpload [FileUpload.java : 79] - repo/01/test02.txt is successfully uploaded to bucket.
+2023-10-02 22:33:46,712 [main] INFO  org.example.FileUpload [FileUpload.java : 80] - ----------------------------------------------
+2023-10-02 22:33:46,714 [main] INFO  org.example.FileUpload [FileUpload.java : 100] - 09/23/23 20:04:29 | 39762 bytes | C:\Users\fang\Documents\repo\02\20131231103232738561744.pdf
+
+2023-10-02 22:33:46,893 [main] INFO  org.example.FileUpload [FileUpload.java : 79] - repo/02/20131231103232738561744.pdf is successfully uploaded to bucket.
+2023-10-02 22:33:46,894 [main] INFO  org.example.FileUpload [FileUpload.java : 80] - ----------------------------------------------
+2023-10-02 22:33:46,895 [main] INFO  org.example.FileUpload [FileUpload.java : 100] - 09/23/23 17:44:58 | 91299 bytes | C:\Users\fang\Documents\repo\02\adam.jpg
+
+2023-10-02 22:33:47,074 [main] INFO  org.example.FileUpload [FileUpload.java : 79] - repo/02/adam.jpg is successfully uploaded to bucket.
+2023-10-02 22:33:47,074 [main] INFO  org.example.FileUpload [FileUpload.java : 80] - ----------------------------------------------
+2023-10-02 22:33:47,075 [main] INFO  org.example.FileUpload [FileUpload.java : 100] - 09/23/23 15:25:00 | 7 bytes | C:\Users\fang\Documents\repo\02\test03.txt
+
+2023-10-02 22:33:47,258 [main] INFO  org.example.FileUpload [FileUpload.java : 79] - repo/02/test03.txt is successfully uploaded to bucket.
+2023-10-02 22:33:47,259 [main] INFO  org.example.FileUpload [FileUpload.java : 80] - ----------------------------------------------
+2023-10-02 22:33:47,261 [main] INFO  org.example.FileUpload [FileUpload.java : 100] - 09/23/23 17:44:32 | 40369 bytes | C:\Users\fang\Documents\repo\03\level\melchor.jpg
+
+2023-10-02 22:33:47,440 [main] INFO  org.example.FileUpload [FileUpload.java : 79] - repo/03/level/melchor.jpg is successfully uploaded to bucket.
+2023-10-02 22:33:47,440 [main] INFO  org.example.FileUpload [FileUpload.java : 80] - ----------------------------------------------
+2023-10-02 22:33:47,441 [main] INFO  org.example.FileUpload [FileUpload.java : 100] - 09/23/23 17:35:51 | 0 bytes | C:\Users\fang\Documents\repo\03\pic.bmp
+
+2023-10-02 22:33:47,622 [main] INFO  org.example.FileUpload [FileUpload.java : 79] - repo/03/pic.bmp is successfully uploaded to bucket.
+2023-10-02 22:33:47,622 [main] INFO  org.example.FileUpload [FileUpload.java : 80] - ----------------------------------------------
+2023-10-02 22:33:47,623 [main] INFO  org.example.FileUpload [FileUpload.java : 100] - 09/23/23 15:25:00 | 7 bytes | C:\Users\fang\Documents\repo\03\test04.txt
+
